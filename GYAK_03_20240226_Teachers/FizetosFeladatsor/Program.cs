@@ -50,13 +50,10 @@
             foreach (IFizetoEszkoz eszkoz in fizetoEszkozok)
             {
                 //Hitel osztály nem fog megfelelni ennek a kritériumnak.
-                if (eszkoz is ITulajdon)
+                //Rövidzár kiértékelés, sorrend fontos!
+                if (eszkoz is ITulajdon && (eszkoz as ITulajdon).Tulajdonos == tulajdonos && eszkoz.Fizet(10))
                 {
-                    //Rövidzár kiértékelés, sorrend fontos!
-                    if ((eszkoz as ITulajdon).Tulajdonos == tulajdonos && eszkoz.Fizet(10))
-                    {
-                        return true;
-                    }
+                    return true;
                 }
                 else
                 {

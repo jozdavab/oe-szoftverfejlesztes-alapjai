@@ -22,6 +22,12 @@
 
         public override bool MoveIn(int newInhabitants)
         {
+            if (newInhabitants < 1)
+            {
+                // Illegal argument.
+                return false;
+            }
+
             if (newInhabitants + InhabitantsCount > roomsCount * 2)
             {
                 // Az apartman egy szobájában maximum 2 fő lakhat.

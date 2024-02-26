@@ -27,8 +27,13 @@
 
         public int GetCost(int months)
         {
+            if (inhabitantsCount == 0)
+            {
+                // Zéróosztó hiba elkerülése. Később tanulnuk kivételkezelést / más megoldást.
+                return -1;
+            }
             // Egész számokat osztunk, értékvesztés történhet!
-            return TotalValue() / 240 / InhabitantsCount;
+            return months * TotalValue() / 240 / InhabitantsCount;
         }
 
         public override bool MoveIn(int newInhabitants)
