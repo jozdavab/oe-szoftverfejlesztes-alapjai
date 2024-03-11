@@ -1,4 +1,6 @@
-﻿namespace GYAK_05_20240311_Teachers
+﻿using GYAK_05_20240311_Teachers.SportOra;
+
+namespace GYAK_05_20240311_Teachers
 {
     public class Program
     {
